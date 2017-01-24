@@ -17,9 +17,16 @@ fi
 # Fallback defaults
 PACMAN=${PACMAN:-pacman}
 
+# Usage message
+usage() {
+  echo "Usage: $0 FILE..."
+}
+
 # Parse command line arguments
 if [ $# -lt 1 ]; then
   >&2 echo "No requirements files provided."
+  >&2 echo
+  >&2 usage
   exit 1
 fi
 
